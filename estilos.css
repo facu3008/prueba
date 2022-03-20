@@ -1,0 +1,87 @@
+body {
+  width: 70%;
+  background: rgb(230, 230, 230);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 50px;
+  /* border: 3px solid black; */
+}
+
+header {
+  background: black;
+  color: rgba(255, 255, 255, 0.952);
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  font-size: 30px;
+}
+/* .imagen {
+  height: 300px;
+  line-height: 30px;
+  margin-right: 10px;
+  border-radius: 40px;
+  background: black;
+  text-align: justify;
+} */
+
+.table {
+  background: rgb(179, 157, 207);
+  color: white;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+}
+
+.clearfix {
+  clear: both;
+}
+#array {
+  background: lightblue;
+  padding: 10px;
+
+  text-align: center;
+}
+.article {
+  background: rgb(212, 212, 212);
+  height: 500 px;
+  width: 100%;
+  float: left;
+  margin-right: 15px;
+  text-align: justify;
+  padding: 10px;
+}
+.article img {
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.Cotizador_Formulario {
+  width: 102%;
+  display: flex;
+}
+.cotizador {
+  background: rgb(212, 212, 212);
+  padding: 10px;
+  width: 60%;
+}
+
+.formulario {
+  padding: 10px;
+  background: rgb(212, 212, 212);
+  width: 40%;
+
+  list-style: none;
+}
+
+.class {
+  height: 500 px;
+  width: 1000px;
+}
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  width: 102%;
+}

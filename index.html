@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./estilos.css">
+
+    <title>Simulador de habitacion</title>
+</head>
+
+<div id="contenedor">
+  <header>Habitaciones "Coder"</header>
+    <body>
+
+        <!-- Imagenes linkeadas a boton -->
+
+        
+        <h3 id="subtitulo">Seleccione el tipo de habitacion para mayor detalle</h3>
+        
+           <div class="imagen">
+                <a href="#simple"><input type = "image" src="./img/simple.jpg" value="Simple" width="220" height="180" id="Simple"></a>
+                
+                <a href="#doble"><input type = "image" src="./img/doble.jpg" width="220" height="180" id="Doble"></a>
+
+                <a href="#matrimonial"><input type = "image" src="./img/matrimonial.jpg" width="220" height="180" id="Matrimonial"></a>
+
+                <a href="#compartida"><input type = "image" src="./img/compartida.jpg" width="220" height="180" id="Compartida"></a>
+            </div>
+
+            
+        
+
+        <!-- CREO TABLA con datos de FETCH y array -->
+        <h3>Caracteristicas generales</h3>
+            <table class="table" border="6" style="width:100%" >
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Precio por Noche</th>
+                        <th scope="col">Estancia Minima</th>
+                    </tr>
+                </thead>
+                <tbody id="contenido" >
+                        
+                                
+
+                </tbody>
+            </table>
+        <hr>       
+        <br>
+
+            <!-- DESCRIPCION GENERAL -->
+            
+            <article class="article">
+                <a id="simple"></a>
+                <h3>Habitacion simple</h3>
+            
+                <img alt="Habitacion simple" src="./Img/simple.jpg" align="left" width =100 px>
+            
+                <br><p> Nuestra habitación simple privada dispone de 1 cama estándar (190 cm de largo), y un baño con ducha privada. Cada cama tiene una luz de lectura, una mesita de noche y una toma de corriente. También a su disposición hay taquillas individuales para guardar sus objetos personales. </p>
+                
+            </article>
+            <hr>
+            <article class="article">
+                <a id="doble"></a>
+                <h3>Habitacion doble</h3>
+                <img alt="Habitacion doble" src="./Img/doble.jpg" align="left"  width =100 px>
+                <br><p>Nuestra habitación doble privada dispone de 2 camas estándar (190 cm de largo), y un baño con ducha privada. Cada cama tiene una luz de lectura, una mesita de noche y una toma de corriente. También a su disposición hay taquillas individuales para guardar sus objetos personales.</p>
+
+
+
+            </article>
+            <hr>
+            <article class="article">
+                <a id="matrimonial"></a>
+                <h3>Habitacion matrimonial</h3>
+
+                <img alt="Habitacion matrimonial" src="./Img/matrimonial.jpg" align="left"  width =100 px> </a>
+                
+                <br><p> Habitación privada con una cama matrimonial. Baño privado con ducha. Las cama dispone de una luz individual, un estante pequeño y una toma de corriente. Taquillas gratuitas aseguradas con tarjeta-llave. La ropa de cama está incluida en el precio.</p>
+                
+
+            </article>
+            <hr>
+            <article class="article">
+                <a id="compartida"></a>
+                <h3>Habitacion compartida</h3>
+                <img alt="Habitacion compartida" src="./Img/compartida.jpg" align="left"  width =100 px>
+                <br><p>Nuestro dormitorio mixto de 4 camas es una excelente opción si buscas conocer gente durante tu viaje o si viajas con un pequeño grupo de amigos. El dormitorio dispone de 2 literas estándar (190 cm de largo) y baño privado con ducha. Cada cama tiene una luz de lectura, un estante pequeño y una toma de corriente. También a su disposición hay taquillas individuales con cerraduras de tarjeta para guardar sus objetos personales con total seguridad.</p>
+                
+
+            </article>
+            <hr>
+            <hr>
+    
+            <!-- SIMULADOR EN PROCESO -->
+
+    <div class="Cotizador_Formulario">            
+        <div class="cotizador">
+            <h2>Cotizador online</h2>
+
+        </select>
+                <span><h4>Seleccione habitacion</h4></span>
+                
+                <select nombre= tipologia id="tipologia" onchange="tipologia()";>
+               
+                <option value="" disabled="" selected=""> Tipo de habitacion</option>
+                <option id="simple" value="730" type="simple">Simple</option>
+                <option id="1" value="810" name="doble">Doble</option> 
+                <option id="2" value="880" name="Matrimonial">Matrimonial</option>
+                <option id="3" value="450" name="compartida">Compartida</option>
+                
+            </select>
+            <br>
+            <span><h4>Indique cantidad de noches y forma de pago</h4></span><input type="text" placeholder="Noches" id="noches" style ="width: 60px; height: 15
+            px;">
+            
+                
+            <select id="forma_pago" onchange="forma_pago()"><br>
+                <option value="" disabled="" selected="">Forma de pago </option>
+                <option value="Debito">Debito</option>
+                <option value="Credito">Credito</option>
+                
+                </select>
+                
+            
+
+            <button onclick="total()" id="total">COTIZAR</button>
+            
+
+                <p><i>*El pago en credito implica un 15 % de interes.</i></p>
+                
+                <p id="tarjeta"></p>
+                    
+                <p id="Cotizacion"></p>
+                
+        </div>
+    
+    <!-- ACA comienzo a crear un FORMULARIO y LocalStorage -->
+    <hr>
+    <hr>
+    <div class="formulario">
+        <h2>Validacion de cliente</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="name"><br>
+            </div>
+        
+        
+            <div class="form-group">
+            <label for="email">Email:</label><br>
+            <input type="email" class="form-control" id="email" placeholder="Ingrese su email" name="email"><br>
+        </div>
+        <div class="form-group">
+            <label for="contraseña">Contraseña:</label><br>
+            <input type="password" class="form-control" id="contraseña" placeholder="Ingrese su contraseña" name="contraseña"><br>
+            <!-- <input type="reset"> -->
+            <button type="button" onclick="guardarData()" id="guardar_btn" disabled  class="btn btn-default">Enviar</button>
+        </div>
+        
+        
+        </form>
+        </div>
+    </div>
+  
+  </body>
+ 
+</div>
+  
+<br>
+<div class="clearfix"></div>
+    <footer>Facundo Moya Comision 20035 - Javascript Course</footer>        
+   
+       
+    </main>
+
+
+<script src="./habitaciones.js"></script>
+<script src="./app_simulador.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
